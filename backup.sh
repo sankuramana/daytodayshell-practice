@@ -27,7 +27,7 @@ if [ $# -lt 2 ]; then # chceking are providing 2 arguments or not
   usage
 fi
 
-source_dir=$1
+source_dir=$1 #/home/ec2-user/daytoday-shellpractice   $1 =sourcedir . $2=dest-dir
 dest_dir=$2
 
 if [ ! -d "$source_dir" ]; then  # chceking do we have creted source folder 
