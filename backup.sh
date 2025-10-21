@@ -18,7 +18,7 @@ exit 1
 fi
 
 usage(){ 
-echo  " USAGE:: sudo sh backup.sh <s.dir> <d.dir> <days>[optional] default 14 days"
+echo  " $R USAGE:: sudo sh backup.sh <s.dir> <d.dir> <days>[optional] default 14 days $N"
 exit 1
 }
 
