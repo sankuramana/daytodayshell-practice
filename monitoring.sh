@@ -8,13 +8,13 @@ do
 usage=$(echo $line | awk '{print $6}' |cut -d "%" -f1)
 partion=$( echo $line |awk '{ print $7}')
 if [ $usage -ge $disk_treshold ]; then 
-message+=$(echo -e "High disk usage on $partion : $usage\n")
+message+="high disk usgae on $partion : $usage\n " #escapint 
 fi 
 
 done <<<$disk_space
 echo -e "message body is $message "
 
-sh mail.sh "sankuramana456@gmail.com" "high disk usage alert" "high disk usage" "$message" "$ip_address" "devopsteam"
+sh mail.sh "sankuramana456@gmail.com" "high disk usage alert" "high disk usage" "$message" "$ip_address"
 # sh mail.sh "info@joindevops.com" "High Disk Usage Alert" "High Disk Usage" "$MESSAGE" "$IP_ADDRESS" "DevOps Team"
 
 
