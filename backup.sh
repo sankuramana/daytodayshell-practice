@@ -27,7 +27,7 @@ if [ $# -lt 2 ]; then
 usage
 fi
 if [ ! -d  $source_dir ]; then
-echo -e "  $R $source_dir dose not exist $N"
+echo -e "  $R $sourc_dir dose not exist $N"
 exit 1
 fi
 if [ ! -d  $desti_dir ]; then
