@@ -1,7 +1,7 @@
 #!/bin/bash
 disk_space=$(df -hT | grep -v Filesystem ) #filtering disk space except filesystem line
 disk_treshold=2
-id_address=$(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) #-s will not print unnessasary
+ip_address=$(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) #-s will not print unnessasary
 message=""
 while IFS= read -r line
 do
@@ -13,3 +13,12 @@ fi
 
 done <<<$disk_space
 echo -e "message body is $message "
+
+sh mail.sh "sankuramana456@gmail.com" "high disk usage alert" "high disk usage" "$message" "$ip_address"
+
+
+# TO_ADDRESS=$1
+# SUBJECT=$2
+# Alert_type=$3
+# message_body=$4
+# ip=$5
