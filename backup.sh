@@ -48,6 +48,12 @@ if [ ! -z "$files" ]; then
     ZIP_FILE_NAME="$dest_dir/app-logs-$TIMESTAMP.zip" #/app-logs is justaname use anything u want
     echo " zip file name is :$ZIP_FILE_NAME"
      find "$source_dir" -name "*.log" -type f -mtime +$days | zip -@ -j "$ZIP_FILE_NAME" 
+     if [ -f $ZIP_FILE_NAME ]
+     then 
+     echo " archived $G suscessfully $N"
+     else 
+     echo " archived the file failure"
+     fi 
 
 else 
   echo -e "${Y}No files to archive, skipping.${N}"
