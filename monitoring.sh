@@ -8,8 +8,8 @@ do
 usage=$(echo $line | awk '{print $6}' |cut -d "%" -f1)
 partion=$( echo $line |awk '{ print $7}')
 if [ $usage -ge $disk_treshold ]; then 
-message+="high disk usgae on $partion : $usage "
+message+="high disk usgae on $partion : $usage\n " #escapint 
 fi 
 
 done <<<$disk_space
-echo "message body is $message "
+echo -e "message body is $message "
