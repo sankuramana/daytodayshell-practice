@@ -1,7 +1,7 @@
 #!/bin/bash
 disk_space=$(df -hT | grep -v Filesystem ) #filtering disk space except filesystem line
 disk_treshold=2
-id_address=$(curl http://169.254.169.254/latest/meta-data/public-ipv4)
+id_address=$(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) #-s will not print unnessasary
 message=""
 while IFS= read -r line
 do
