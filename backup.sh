@@ -4,8 +4,8 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
-source-dir=$1
-desti-dir=$2
+source_dir=$1
+desti_dir=$2
 LOGS_FOLDER="/var/log/shell-script"
 SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log" # /var/log/shell-script/16-logs.log
@@ -26,12 +26,12 @@ exit 1
 if [ $# -lt 2 ]; then
 usage
 fi
-if [ ! -d  $source-dir ]; then
-echo -e "  $R $source-dir dose not exist $N"
+if [ ! -d  $source_dir ]; then
+echo -e "  $R $source_dir dose not exist $N"
 exit 1
 fi
-if [ ! -d  $desti-dir ]; then
-echo -e "  $R $desti-dir dose not exist $N"
+if [ ! -d  $desti_dir ]; then
+echo -e "  $R $desti_dir dose not exist $N"
 exit 1
 fi
 
