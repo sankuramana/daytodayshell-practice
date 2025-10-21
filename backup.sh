@@ -50,7 +50,7 @@ if [ ! -z "$files" ]; then
      find "$source_dir" -name "*.log" -type f -mtime +$days | zip -@ -j "$ZIP_FILE_NAME" 
      if [ -f $ZIP_FILE_NAME ]
      then 
-     echo " archived $G suscessfully $N"
+     echo  -e "archived $G suscessfully $N"
      else 
      echo " archived the file failure"
      fi 
