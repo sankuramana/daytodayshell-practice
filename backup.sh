@@ -1,3 +1,4 @@
+#!/bin/bash
 USERID=$(id -u)
 R="\e[31m"
 G="\e[32m"
@@ -17,7 +18,7 @@ exit 1
 fi
 
 usage(){ 
-echo  " USAGE:: sudo ssh backup.sh <s.dir> <d.dir>  <days>[optional] default 14 days"
+echo  " USAGE:: sudo sh backup.sh <s.dir> <d.dir> <days>[optional] default 14 days"
 exit 1
 }
 
