@@ -8,7 +8,7 @@ do
 usage=$(echo $line | awk '{print $6}' |cut -d "%" -f1)
 partion=$( echo $line |awk '{ print $7}')
 if [ $usage -ge $disk_treshold ]; then 
-message+="high disk usgae on $partion : $usage\n " #escapint 
+message+=$(echo -e "High disk usage on $partion : $usage\n")
 fi 
 
 done <<<$disk_space
