@@ -39,9 +39,9 @@ if [ ! -d "$dest_dir" ]; then
   echo -e "${R}ERROR:: Destination directory '$dest_dir' does not exist.${N}"
   exit 1
 fi
-files_to_find=$(find $source_dir -name "*.log" type f -mtime +4)
-if [ ! -z $files_to_fine  ]; then 
+files_to_find=$(find $source_dir -name "*.log" -type f -mtime +4)
+if [ ! -z "$files_to_find"  ]; then 
 echo "files found"
 else 
-echo -e"no files to archive $Y skipping $N"
+echo -e "no files to archive $Y skipping $N"
 fi
