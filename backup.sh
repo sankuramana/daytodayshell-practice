@@ -39,11 +39,16 @@ if [ ! -d "$dest_dir" ]; then
   echo -e "${R}ERROR:: Destination directory '$dest_dir' does not exist.${N}"
   exit 1
 fi
-files_to_find=$(find "$source_dir" -name "*.log" -type f -mtime +4)
+files=$(find "$source_dir" -name "*.log" -type f -mtime +$days)
 
-if [ ! -z "$files_to_find" ]; then 
+if [ ! -z "$files" ]; then 
   echo "Files found:"
-  echo "$files_to_find"
+  echo "$files" #if files fins we ahve to zip the file 
+      TIMESTAMP=$(date +%F-%H-%M)
+    ZIP_FILE_NAME="$dest_dir/app-logs-$TIMESTAMP.zip" #/app-logs is justaname use anything u want
+    echo " zip file name is :$ZIP_FILE_NAME"
+    echo $files | zip -@ -j "$ZIP_FILE_NAME" 
+
 else 
   echo -e "${Y}No files to archive, skipping.${N}"
 fi
