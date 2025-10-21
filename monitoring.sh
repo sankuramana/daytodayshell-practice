@@ -4,7 +4,7 @@ while IFS= read -r line
 do
 usage=$(echo $line | awk '{print $6}' |cut -d "%" -f1)
 partion=$( echo $line |awk '{ print $7}')
-if [ $susage -ge $disk_space]; then 
+if [ $usage -ge $disk_space]; then 
 echo "high usgae on $partion : $usage "
 fi 
 
