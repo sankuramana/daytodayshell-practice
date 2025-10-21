@@ -1,5 +1,5 @@
 #!/bin/bash
-disk_space=$(df -ht | grep -v Filesyatem ) #filtering disk space except filesystem line
+disk_space=$(df -hT | grep -v Filesystem ) #filtering disk space except filesystem line
 while IFS= read -r line
 do
 echo " disk space $line"
