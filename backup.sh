@@ -43,5 +43,5 @@ files_to_find=$(find $source_dir -name "*.log" type f -mtime +4)
 if [ ! -z $files_to_fine  ]; then 
 echo "files found"
 else 
-echo "no files to archive $Y skipping $N"
+echo -e"no files to archive $Y skipping $N"
 fi
