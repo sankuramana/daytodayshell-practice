@@ -13,7 +13,7 @@ mkdir -p $LOGS_FOLDER
 echo "Script started executed at: $(date)" | tee -a $LOG_FILE
 
 if [ $USERID -ne 0 ]; then 
-echo "ERROR:: please run this script with root priviliage:
+echo "ERROR:: please run this script with root priviliage"
 exit 1
 fi
 
