@@ -17,8 +17,8 @@ exit 1
 fi
 
 usage(){ 
-echo  " USAGE:: sudo ssh backup.sh <s.dir> <d.dir><days>[optional] default 14 days"
-exit1
+echo  " USAGE:: sudo ssh backup.sh <s.dir> <d.dir>  <days>[optional] default 14 days"
+exit 1
 }
 
 if [ $# -lt 2 ]; then
